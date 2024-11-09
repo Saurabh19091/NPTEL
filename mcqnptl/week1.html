@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .question {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 1.1em;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            cursor: pointer;
+            margin: 8px 0;
+            padding: 10px;
+            background-color: #e6e6e6;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        li:hover {
+            background-color: #d0d0d0;
+        }
+        .answer {
+            font-weight: bold;
+            color: green;
+        }
+        .incorrect {
+            font-weight: bold;
+            color: red;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Questions 1 to 20 -->
+    <div class="question">
+        <p>1. What does a transducer do?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Converts electrical signals into sound</li>
+            <li onclick="checkAnswer(this, 'B')">B) Converts a signal from one physical form to another</li>
+            <li onclick="checkAnswer(this, 'B')">C) Measures the temperature</li>
+            <li onclick="checkAnswer(this, 'B')">D) Detects chemical reactions</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>2. Which of the following is an example of a passive sensor?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Radar</li>
+            <li onclick="checkAnswer(this, 'B')">B) Accelerometer</li>
+            <li onclick="checkAnswer(this, 'B')">C) Laser altimeter</li>
+            <li onclick="checkAnswer(this, 'B')">D) Sounder</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>3. Which characteristic defines the correctness of a sensor’s output compared to a superior system?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Range</li>
+            <li onclick="checkAnswer(this, 'C')">B) Resolution</li>
+            <li onclick="checkAnswer(this, 'C')">C) Accuracy</li>
+            <li onclick="checkAnswer(this, 'C')">D) Sensitivity</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>4. What is the primary purpose of a fluid power rotary actuator?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Converts electrical energy into linear motion</li>
+            <li onclick="checkAnswer(this, 'B')">B) Provides rotary output through fluid pressure</li>
+            <li onclick="checkAnswer(this, 'B')">C) Produces linear displacement</li>
+            <li onclick="checkAnswer(this, 'B')">D) Converts fluid pressure into sound</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>5. What is the standard range of transmission for IEEE 802.15.4?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) 5 to 15 meters</li>
+            <li onclick="checkAnswer(this, 'B')">B) 10 to 75 meters</li>
+            <li onclick="checkAnswer(this, 'B')">C) 50 to 100 meters</li>
+            <li onclick="checkAnswer(this, 'B')">D) 1 to 10 meters</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>6. Which protocol is primarily used for IPv6 over Low-Power Wireless Personal Area Networks?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Zigbee</li>
+            <li onclick="checkAnswer(this, 'B')">B) 6LoWPAN</li>
+            <li onclick="checkAnswer(this, 'B')">C) Wireless HART</li>
+            <li onclick="checkAnswer(this, 'B')">D) Bluetooth</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>7. Which type of actuator converts electrical energy into rotational motion?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Electric Linear Actuator</li>
+            <li onclick="checkAnswer(this, 'C')">B) Fluid Power Linear Actuator</li>
+            <li onclick="checkAnswer(this, 'C')">C) Electric Rotary Actuator</li>
+            <li onclick="checkAnswer(this, 'C')">D) Manual Rotary Actuator</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>8. What is a primary application of Z-Wave technology?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Industrial automation</li>
+            <li onclick="checkAnswer(this, 'B')">B) Home and office automation</li>
+            <li onclick="checkAnswer(this, 'B')">C) Medical device communication</li>
+            <li onclick="checkAnswer(this, 'B')">D) Long-range communication</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>9. What is the main difference between passive and active RFID tags?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Passive tags transmit data over longer distances</li>
+            <li onclick="checkAnswer(this, 'B')">B) Active tags require an external power source</li>
+            <li onclick="checkAnswer(this, 'B')">C) Passive tags have built-in power supplies</li>
+            <li onclick="checkAnswer(this, 'B')">D) Active tags cannot transmit data continuously</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>10. Which of the following is NOT a characteristic of IoT devices?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) High processing power</li>
+            <li onclick="checkAnswer(this, 'A')">B) Energy constraints</li>
+            <li onclick="checkAnswer(this, 'A')">C) Low throughput</li>
+            <li onclick="checkAnswer(this, 'A')">D) Small size</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>11. What is the typical data rate for IEEE 802.15.4 at the 2.4 GHz frequency band?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) 100 kbps</li>
+            <li onclick="checkAnswer(this, 'B')">B) 250 kbps</li>
+            <li onclick="checkAnswer(this, 'B')">C) 500 kbps</li>
+            <li onclick="checkAnswer(this, 'B')">D) 1 Mbps</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>12. What topology does IEEE 802.15.4 typically support?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) Bus and Ring</li>
+            <li onclick="checkAnswer(this, 'D')">B) Mesh and Star</li>
+            <li onclick="checkAnswer(this, 'D')">C) Tree and Ring</li>
+            <li onclick="checkAnswer(this, 'D')">D) Star and Peer-to-Peer</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>13. Zigbee operates at which of the following frequencies?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) 1.2 GHz</li>
+            <li onclick="checkAnswer(this, 'B')">B) 2.4 GHz</li>
+            <li onclick="checkAnswer(this, 'B')">C) 5.8 GHz</li>
+            <li onclick="checkAnswer(this, 'B')">D) 10 GHz</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>14. What is the maximum payload size allowed by Zigbee?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) 64 bytes</li>
+            <li onclick="checkAnswer(this, 'B')">B) 104 bytes</li>
+            <li onclick="checkAnswer(this, 'B')">C) 128 bytes</li>
+            <li onclick="checkAnswer(this, 'B')">D) 256 bytes</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>15. Which protocol is used to optimize IPv6 for low-power networks like IEEE 802.15.4?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Zigbee</li>
+            <li onclick="checkAnswer(this, 'C')">B) Bluetooth</li>
+            <li onclick="checkAnswer(this, 'C')">C) 6LoWPAN</li>
+            <li onclick="checkAnswer(this, 'C')">D) ISA 100</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>16. What is the purpose of packet fragmentation in 6LoWPAN?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Increase bandwidth</li>
+            <li onclick="checkAnswer(this, 'B')">B) Allow large IPv6 packets to fit within IEEE 802.15.4 frames</li>
+            <li onclick="checkAnswer(this, 'B')">C) Reduce power consumption</li>
+            <li onclick="checkAnswer(this, 'B')">D) Enable low latency communication</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>17. Which of the following security methods is supported by 6LoWPAN?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) WPA2</li>
+            <li onclick="checkAnswer(this, 'B')">B) AES-128</li>
+            <li onclick="checkAnswer(this, 'B')">C) RSA</li>
+            <li onclick="checkAnswer(this, 'B')">D) TLS</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>18. Which protocol uses channel hopping to avoid interference?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Zigbee</li>
+            <li onclick="checkAnswer(this, 'B')">B) Wireless HART</li>
+            <li onclick="checkAnswer(this, 'B')">C) Bluetooth</li>
+            <li onclick="checkAnswer(this, 'B')">D) ISA 100</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>19. Wireless HART is based on which protocol?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Bluetooth</li>
+            <li onclick="checkAnswer(this, 'C')">B) Wi-Fi</li>
+            <li onclick="checkAnswer(this, 'C')">C) Zigbee</li>
+            <li onclick="checkAnswer(this, 'C')">D) IEC 61850</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>20. Which of the following is NOT a type of actuator used in robotics?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) Electric actuators</li>
+            <li onclick="checkAnswer(this, 'D')">B) Hydraulic actuators</li>
+            <li onclick="checkAnswer(this, 'D')">C) Pneumatic actuators</li>
+            <li onclick="checkAnswer(this, 'D')">D) Thermal actuators</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <!-- Questions 23 to 40 -->
+    <div class="question">
+        <p>23. Which application is NFC primarily used for?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Long-distance communication</li>
+            <li onclick="checkAnswer(this, 'C')">B) High-speed data transfer</li>
+            <li onclick="checkAnswer(this, 'C')">C) Contactless payments</li>
+            <li onclick="checkAnswer(this, 'C')">D) File encryption</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>24. RFID tags that do not require an internal power source are called:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Active tags</li>
+            <li onclick="checkAnswer(this, 'B')">B) Passive tags</li>
+            <li onclick="checkAnswer(this, 'B')">C) Static tags</li>
+            <li onclick="checkAnswer(this, 'B')">D) Relay tags</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>25. In MQTT, what does the “at most once” QoS level guarantee?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Guaranteed message delivery</li>
+            <li onclick="checkAnswer(this, 'C')">B) At least one message delivery</li>
+            <li onclick="checkAnswer(this, 'C')">C) Message delivery with no guarantee</li>
+            <li onclick="checkAnswer(this, 'C')">D) Delivery of message at fixed intervals</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    <div class="question">
+        <p>31. What type of sensor measures changes in light intensity?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Temperature sensor</li>
+            <li onclick="checkAnswer(this, 'B')">B) LDR (Light Dependent Resistor)</li>
+            <li onclick="checkAnswer(this, 'B')">C) Pressure sensor</li>
+            <li onclick="checkAnswer(this, 'B')">D) Strain gauge</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>32. What IoT standard is used for smart utility networks in the energy industry?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) IEEE 802.15.4</li>
+            <li onclick="checkAnswer(this, 'C')">B) IEEE 802.3</li>
+            <li onclick="checkAnswer(this, 'C')">C) IEEE 802.15.4g</li>
+            <li onclick="checkAnswer(this, 'C')">D) IEEE 1888</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>33. Which of the following allows devices to automatically create an IPv6 address?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Stateless auto-configuration</li>
+            <li onclick="checkAnswer(this, 'A')">B) MAC address assignment</li>
+            <li onclick="checkAnswer(this, 'A')">C) CoAP</li>
+            <li onclick="checkAnswer(this, 'A')">D) Bluetooth pairing</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>34. What is the purpose of a potentiometer?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) To measure strain</li>
+            <li onclick="checkAnswer(this, 'C')">B) To convert sound into an electrical signal</li>
+            <li onclick="checkAnswer(this, 'C')">C) To measure displacement</li>
+            <li onclick="checkAnswer(this, 'C')">D) To detect chemical substances</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>35. Which characteristic is measured by a vector sensor?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Only magnitude</li>
+            <li onclick="checkAnswer(this, 'B')">B) Both magnitude and direction</li>
+            <li onclick="checkAnswer(this, 'B')">C) Temperature alone</li>
+            <li onclick="checkAnswer(this, 'B')">D) Only pressure</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>36. Which protocol operates on a Publish/Subscribe model using TCP/IP?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) CoAP</li>
+            <li onclick="checkAnswer(this, 'D')">B) XMPP</li>
+            <li onclick="checkAnswer(this, 'D')">C) AMQP</li>
+            <li onclick="checkAnswer(this, 'D')">D) MQTT</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>37. Which protocol in IoT is specifically designed for lightweight RESTful applications?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) HTTP</li>
+            <li onclick="checkAnswer(this, 'C')">B) FTP</li>
+            <li onclick="checkAnswer(this, 'C')">C) CoAP</li>
+            <li onclick="checkAnswer(this, 'C')">D) XMPP</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>38. In which protocol are topics used as data elements for publication?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) DDS RTPS</li>
+            <li onclick="checkAnswer(this, 'A')">B) HTTP</li>
+            <li onclick="checkAnswer(this, 'A')">C) Zigbee</li>
+            <li onclick="checkAnswer(this, 'A')">D) MQTT</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>39. What is the key feature of ISA 100.11a that supports interoperability?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Limited address space</li>
+            <li onclick="checkAnswer(this, 'B')">B) AES-128 encryption</li>
+            <li onclick="checkAnswer(this, 'B')">C) Vendor-specific APIs</li>
+            <li onclick="checkAnswer(this, 'B')">D) IPv4-based technology</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>40. Which sensor detects the presence of gas like LPG or CH4?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Temperature sensor</li>
+            <li onclick="checkAnswer(this, 'C')">B) PIR sensor</li>
+            <li onclick="checkAnswer(this, 'C')">C) MQ-5 gas detector</li>
+            <li onclick="checkAnswer(this, 'C')">D) Ultrasonic sensor</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+
+    <!-- Repeat for remaining questions -->
+
+    <script>
+        function checkAnswer(selectedOption, correctAnswer) {
+            // Get the feedback container
+            const feedback = selectedOption.closest('.question').querySelector('.feedback');
+            // Get all options in the current question
+            const options = selectedOption.closest('ol').children;
+            
+            // Disable all options after selection
+            for (let option of options) {
+                option.style.pointerEvents = 'none';
+            }
+
+            // Check if the selected option is correct
+            if (selectedOption.innerText[0] === correctAnswer) {
+                selectedOption.style.backgroundColor = '#4CAF50'; // Correct answer (green)
+                feedback.innerHTML = "<span class='answer'>Correct!</span>";
+            } else {
+                selectedOption.style.backgroundColor = '#F44336'; // Incorrect answer (red)
+                feedback.innerHTML = `<span class='incorrect'>Incorrect! The correct answer is ${correctAnswer}.</span>`;
+                
+                // Highlight correct answer
+                for (let option of options) {
+                    if (option.innerText[0] === correctAnswer) {
+                        option.style.backgroundColor = '#4CAF50'; // Correct option (green)
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

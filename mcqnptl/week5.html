@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .question {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 1.1em;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            cursor: pointer;
+            margin: 8px 0;
+            padding: 10px;
+            background-color: #e6e6e6;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        li:hover {
+            background-color: #d0d0d0;
+        }
+        .answer {
+            font-weight: bold;
+            color: green;
+        }
+        .incorrect {
+            font-weight: bold;
+            color: red;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="question">
+        <p>1. What is a business model in the context of Industry 4.0?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) A system of trade policies</li>
+            <li onclick="checkAnswer(this, 'B')">B) A description of how an organization creates, delivers, and captures value</li>
+            <li onclick="checkAnswer(this, 'B')">C) A list of manufacturing processes</li>
+            <li onclick="checkAnswer(this, 'B')">D) A sales contract between businesses</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>2. Which business model is based on generating revenue from periodic usage fees?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Subscription Model</li>
+            <li onclick="checkAnswer(this, 'A')">B) Asset-Sharing Model</li>
+            <li onclick="checkAnswer(this, 'A')">C) Outcome-Based Model</li>
+            <li onclick="checkAnswer(this, 'A')">D) Freemium Model</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>3. The value proposition in a business model primarily focuses on:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Revenue generation</li>
+            <li onclick="checkAnswer(this, 'B')">B) Creating value for a customer segment</li>
+            <li onclick="checkAnswer(this, 'B')">C) Competitive pricing</li>
+            <li onclick="checkAnswer(this, 'B')">D) Distribution channels</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>4. What is the primary advantage of a Subscription Model?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Unpredictable revenue</li>
+            <li onclick="checkAnswer(this, 'C')">B) Non-recurring income</li>
+            <li onclick="checkAnswer(this, 'C')">C) Predictable, recurring revenue</li>
+            <li onclick="checkAnswer(this, 'C')">D) No customer interaction needed</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>5. Which model is based on paying for the outcome rather than ownership?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Subscription Model</li>
+            <li onclick="checkAnswer(this, 'B')">B) Outcome-Based Model</li>
+            <li onclick="checkAnswer(this, 'B')">C) Cloud-Based Model</li>
+            <li onclick="checkAnswer(this, 'B')">D) Licensing Model</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>6. Which of the following is a challenge associated with the Subscription Model?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Lack of customer relationships</li>
+            <li onclick="checkAnswer(this, 'C')">B) No revenue</li>
+            <li onclick="checkAnswer(this, 'C')">C) Customer management and plan management</li>
+            <li onclick="checkAnswer(this, 'C')">D) Irregular invoicing</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>7. An Asset-Sharing Model in IIoT primarily aims to:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Reduce machine availability</li>
+            <li onclick="checkAnswer(this, 'B')">B) Share IoT-enabled assets among multiple customers</li>
+            <li onclick="checkAnswer(this, 'B')">C) Limit product usage</li>
+            <li onclick="checkAnswer(this, 'B')">D) Increase equipment downtime</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>8. What is a primary benefit of the Asset-Sharing Model?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Higher customer prices</li>
+            <li onclick="checkAnswer(this, 'B')">B) Reduced resource wastage</li>
+            <li onclick="checkAnswer(this, 'B')">C) Increased operating costs</li>
+            <li onclick="checkAnswer(this, 'B')">D) Fewer customer interactions</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>9. The term "IoT-as-a-Service" refers to:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Selling IoT devices directly</li>
+            <li onclick="checkAnswer(this, 'B')">B) Leasing IoT-enabled products to customers</li>
+            <li onclick="checkAnswer(this, 'B')">C) Offering free IoT services</li>
+            <li onclick="checkAnswer(this, 'B')">D) Selling IoT data to government agencies</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>10. One advantage of the Outcome-Based Model is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Increased customer risk</li>
+            <li onclick="checkAnswer(this, 'B')">B) Reduced negotiation cycle</li>
+            <li onclick="checkAnswer(this, 'B')">C) Fixed product usage</li>
+            <li onclick="checkAnswer(this, 'B')">D) High initial cost</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>11. Which model involves offering data and analysis services primarily to a mass market?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Subscription Model</li>
+            <li onclick="checkAnswer(this, 'B')">B) Service-Oriented Business Model</li>
+            <li onclick="checkAnswer(this, 'B')">C) Asset-Sharing Model</li>
+            <li onclick="checkAnswer(this, 'B')">D) Freemium Model</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>12. A major advantage of IoT-as-a-Service is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Increased licensing costs</li>
+            <li onclick="checkAnswer(this, 'B')">B) Enhanced preventive maintenance by vendors</li>
+            <li onclick="checkAnswer(this, 'B')">C) Decreased customer interaction</li>
+            <li onclick="checkAnswer(this, 'B')">D) Unstable revenue</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>13. In the Cloud-Based Business Model, what does IaaS stand for?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Information-as-a-Service</li>
+            <li onclick="checkAnswer(this, 'B')">B) Infrastructure-as-a-Service</li>
+            <li onclick="checkAnswer(this, 'B')">C) Internet-as-a-Service</li>
+            <li onclick="checkAnswer(this, 'B')">D) Integration-as-a-Service</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>14. Which of these is NOT a benefit of Platform-as-a-Service (PaaS)?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Enables software development</li>
+            <li onclick="checkAnswer(this, 'C')">B) Supports application integration</li>
+            <li onclick="checkAnswer(this, 'C')">C) Offers data storage alone</li>
+            <li onclick="checkAnswer(this, 'C')">D) Open to external parties for application development</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>15. The revenue model in a Cloud-Based Business Model typically includes:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Subscription fees and pay-per-use</li>
+            <li onclick="checkAnswer(this, 'A')">B) Fixed annual fees</li>
+            <li onclick="checkAnswer(this, 'A')">C) Free access only</li>
+            <li onclick="checkAnswer(this, 'A')">D) Hardware sales</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>16. An example of IIoT's Process-Oriented Business Model application is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Selling data to third parties</li>
+            <li onclick="checkAnswer(this, 'B')">B) Optimizing manufacturing processes to reduce downtime</li>
+            <li onclick="checkAnswer(this, 'B')">C) Subscription-based pricing</li>
+            <li onclick="checkAnswer(this, 'B')">D) Providing free software</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <!-- Continue for questions 17-30 as above -->
+    <div class="question">
+        <p>17. Which is a core competency for Service-Oriented Business Models?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Machine tools</li>
+            <li onclick="checkAnswer(this, 'B')">B) Data analysis methods</li>
+            <li onclick="checkAnswer(this, 'B')">C) Local storage systems</li>
+            <li onclick="checkAnswer(this, 'B')">D) Printed reports</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>18. In the context of IIoT, KPIs are typically used for:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Increasing manual labor</li>
+            <li onclick="checkAnswer(this, 'B')">B) Evaluating operational safety and health</li>
+            <li onclick="checkAnswer(this, 'B')">C) Limiting data usage</li>
+            <li onclick="checkAnswer(this, 'B')">D) Predicting financial risks only</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>19. The Industrial Internet Consortium (IIC) primarily focuses on:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Creating business models</li>
+            <li onclick="checkAnswer(this, 'B')">B) Promoting open standards and interoperability</li>
+            <li onclick="checkAnswer(this, 'B')">C) Selling hardware for IIoT</li>
+            <li onclick="checkAnswer(this, 'B')">D) Limiting innovation</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>20. A leading KPI in Occupational Safety and Health (OSH) is characterized as:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Easy to improve</li>
+            <li onclick="checkAnswer(this, 'B')">B) Input-oriented and predictive</li>
+            <li onclick="checkAnswer(this, 'B')">C) Costly to measure</li>
+            <li onclick="checkAnswer(this, 'B')">D) Output-focused</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>21. In the IIRA framework, what does the Three-Tier Architecture include?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Communication, storage, computation</li>
+            <li onclick="checkAnswer(this, 'B')">B) Edge, platform, enterprise layers</li>
+            <li onclick="checkAnswer(this, 'B')">C) Data, AI, and cloud layers</li>
+            <li onclick="checkAnswer(this, 'B')">D) Only application interfaces</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>22. The main purpose of the gateway in a Gateway-Mediated Edge Architecture is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Limiting data flow</li>
+            <li onclick="checkAnswer(this, 'B')">B) Transferring, processing, and analyzing data</li>
+            <li onclick="checkAnswer(this, 'B')">C) Printing data reports</li>
+            <li onclick="checkAnswer(this, 'B')">D) Operating offline</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>23. In the IIRA framework, a viewpoint is defined as:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) An individual’s opinion</li>
+            <li onclick="checkAnswer(this, 'C')">B) An idea or concept within the system</li>
+            <li onclick="checkAnswer(this, 'C')">C) A collection of ideas that analyze and solve concerns</li>
+            <li onclick="checkAnswer(this, 'C')">D) A type of software</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>24. What does IIRA’s Functional Viewpoint primarily cover?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Theories and assumptions</li>
+            <li onclick="checkAnswer(this, 'C')">B) Business trends</li>
+            <li onclick="checkAnswer(this, 'C')">C) Specific functions of the IIoT system</li>
+            <li onclick="checkAnswer(this, 'C')">D) Legal restrictions</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>25. The Layered Databus Pattern in IIoT is useful for:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Slow data processing</li>
+            <li onclick="checkAnswer(this, 'B')">B) Controlling, monitoring, and data analytics</li>
+            <li onclick="checkAnswer(this, 'B')">C) Manual logging</li>
+            <li onclick="checkAnswer(this, 'B')">D) Limiting device compatibility</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>26. Which IIoT business model focuses on the virtual consolidation of assets?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Subscription Model</li>
+            <li onclick="checkAnswer(this, 'B')">B) Asset-Sharing Model</li>
+            <li onclick="checkAnswer(this, 'B')">C) Outcome-Based Model</li>
+            <li onclick="checkAnswer(this, 'B')">D) Data Analytics Model</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>27. A core component of IIRA’s Business Viewpoint is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Optimizing manual labor</li>
+            <li onclick="checkAnswer(this, 'B')">B) Defining the vision and values</li>
+            <li onclick="checkAnswer(this, 'B')">C) Monitoring production costs</li>
+            <li onclick="checkAnswer(this, 'B')">D) Creating individual tasks</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>28. IIRA’s Functional Viewpoint in IIoT includes which domain for sensing and actuation?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Business Domain</li>
+            <li onclick="checkAnswer(this, 'B')">B) Control Domain</li>
+            <li onclick="checkAnswer(this, 'B')">C) Data Domain</li>
+            <li onclick="checkAnswer(this, 'B')">D) Sales Domain</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>29. A key objective of a cloud-based business model is to:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Reduce customer engagement</li>
+            <li onclick="checkAnswer(this, 'B')">B) Offer on-demand resources such as data storage</li>
+            <li onclick="checkAnswer(this, 'B')">C) Limit software capabilities</li>
+            <li onclick="checkAnswer(this, 'B')">D) Sell physical servers</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>30. What type of data structure is used to improve data integration in a Layered Databus Pattern?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Separate data buses for each machine</li>
+            <li onclick="checkAnswer(this, 'B')">B) A unified, layered data bus for device communication</li>
+            <li onclick="checkAnswer(this, 'B')">C) Physical data-only buses</li>
+            <li onclick="checkAnswer(this, 'B')">D) Printed documents</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>31. The Industrial Internet Reference Architecture (IIRA) focuses on:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Business transactions</li>
+            <li onclick="checkAnswer(this, 'B')">B) IIoT system interoperability</li>
+            <li onclick="checkAnswer(this, 'B')">C) Limiting machine-to-machine interaction</li>
+            <li onclick="checkAnswer(this, 'B')">D) Financial auditing</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>32. Which business model type prioritizes cloud infrastructure and resources?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Process-Oriented</li>
+            <li onclick="checkAnswer(this, 'C')">B) Service-Oriented</li>
+            <li onclick="checkAnswer(this, 'C')">C) Cloud-Based</li>
+            <li onclick="checkAnswer(this, 'C')">D) Asset-Driven</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>33. What does the Outcome-Based Model emphasize in IIoT?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Product ownership</li>
+            <li onclick="checkAnswer(this, 'B')">B) Result-focused payment</li>
+            <li onclick="checkAnswer(this, 'B')">C) High initial costs</li>
+            <li onclick="checkAnswer(this, 'B')">D) Short-term usage</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>34. What is the primary objective of IIoT’s Service-Oriented Business Model?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Product sales</li>
+            <li onclick="checkAnswer(this, 'B')">B) Data utilization and aggregation</li>
+            <li onclick="checkAnswer(this, 'B')">C) Limiting service access</li>
+            <li onclick="checkAnswer(this, 'B')">D) Manual process monitoring</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>35. In IIRA’s Usage Viewpoint, a "role" refers to:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) A data storage method</li>
+            <li onclick="checkAnswer(this, 'C')">B) Specific functions within a task</li>
+            <li onclick="checkAnswer(this, 'C')">C) An entity’s responsibilities within a task</li>
+            <li onclick="checkAnswer(this, 'C')">D) A financial position</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>36. What kind of analytics is used in IIoT for performance prediction?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Manual reporting</li>
+            <li onclick="checkAnswer(this, 'C')">B) Descriptive analytics</li>
+            <li onclick="checkAnswer(this, 'C')">C) Predictive analytics</li>
+            <li onclick="checkAnswer(this, 'C')">D) Financial analysis only</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>37. IIRA’s Three-Tier Architecture includes a layer focused on decision support systems, known as:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Edge Layer</li>
+            <li onclick="checkAnswer(this, 'C')">B) Platform Layer</li>
+            <li onclick="checkAnswer(this, 'C')">C) Enterprise Layer</li>
+            <li onclick="checkAnswer(this, 'C')">D) Control Layer</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>38. Which domain in IIRA's Functional Viewpoint handles data processing and persistence?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Control Domain</li>
+            <li onclick="checkAnswer(this, 'C')">B) Business Domain</li>
+            <li onclick="checkAnswer(this, 'C')">C) Information Domain</li>
+            <li onclick="checkAnswer(this, 'C')">D) Application Domain</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>39. A key advantage of IIoT’s Service-Oriented Model is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Limited customer engagement</li>
+            <li onclick="checkAnswer(this, 'C')">B) High fixed costs</li>
+            <li onclick="checkAnswer(this, 'C')">C) Variable costs with scalable data services</li>
+            <li onclick="checkAnswer(this, 'C')">D) Static services only</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>40. A primary challenge in IIoT business models is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Data security and privacy concerns</li>
+            <li onclick="checkAnswer(this, 'A')">B) Lack of automation options</li>
+            <li onclick="checkAnswer(this, 'A')">C) Inadequate data storage</li>
+            <li onclick="checkAnswer(this, 'A')">D) Limited customer interest</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    
+
+
+   
+    
+    
+    
+
+<<script>
+    function checkAnswer(selectedOption, correctAnswer) {
+        // Get the feedback container
+        const feedback = selectedOption.closest('.question').querySelector('.feedback');
+        // Get all options in the current question
+        const options = selectedOption.closest('ol').children;
+        
+        // Disable all options after selection
+        for (let option of options) {
+            option.style.pointerEvents = 'none';
+        }
+
+        // Check if the selected option is correct
+        if (selectedOption.innerText[0] === correctAnswer) {
+            selectedOption.style.backgroundColor = '#4CAF50'; // Correct answer (green)
+            feedback.innerHTML = "<span class='answer'>Correct!</span>";
+        } else {
+            selectedOption.style.backgroundColor = '#F44336'; // Incorrect answer (red)
+            feedback.innerHTML = `<span class='incorrect'>Incorrect! The correct answer is ${correctAnswer}.</span>`;
+            
+            // Highlight correct answer
+            for (let option of options) {
+                if (option.innerText[0] === correctAnswer) {
+                    option.style.backgroundColor = '#4CAF50'; // Correct option (green)
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

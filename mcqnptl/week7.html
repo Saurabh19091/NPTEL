@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .question {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 1.1em;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            cursor: pointer;
+            margin: 8px 0;
+            padding: 10px;
+            background-color: #e6e6e6;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        li:hover {
+            background-color: #d0d0d0;
+        }
+        .answer {
+            font-weight: bold;
+            color: green;
+        }
+        .incorrect {
+            font-weight: bold;
+            color: red;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="question">
+        <p>1. What does LPWAN stand for?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Long Power Wide Area Network</li>
+            <li onclick="checkAnswer(this, 'B')">B) Low Power Wide Area Network</li>
+            <li onclick="checkAnswer(this, 'B')">C) Long Path Wireless Access Network</li>
+            <li onclick="checkAnswer(this, 'B')">D) Low Path Wide Access Network</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>2. Which technology uses the chirp spread spectrum (CSS) modulation technique?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Wi-Fi</li>
+            <li onclick="checkAnswer(this, 'C')">B) Zigbee</li>
+            <li onclick="checkAnswer(this, 'C')">C) LoRa</li>
+            <li onclick="checkAnswer(this, 'C')">D) Sigfox</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>3. LoRa operates in which radio frequency bands in Europe?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) 2.4 GHz</li>
+            <li onclick="checkAnswer(this, 'B')">B) 433 MHz and 868 MHz</li>
+            <li onclick="checkAnswer(this, 'B')">C) 169 MHz and 915 MHz</li>
+            <li onclick="checkAnswer(this, 'B')">D) 1 GHz</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>4. Sigfox is primarily used for:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) High-speed data transfer</li>
+            <li onclick="checkAnswer(this, 'B')">B) Machine-to-Machine communication with low data rates</li>
+            <li onclick="checkAnswer(this, 'B')">C) Voice communication</li>
+            <li onclick="checkAnswer(this, 'B')">D) High-resolution video streaming</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>5. Which of the following is a characteristic of Sigfox networks?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) High bit rate</li>
+            <li onclick="checkAnswer(this, 'B')">B) Up to 140 messages per day</li>
+            <li onclick="checkAnswer(this, 'B')">C) Uses licensed bands</li>
+            <li onclick="checkAnswer(this, 'B')">D) High-power consumption</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>6. What is the primary purpose of the NodeMCU in the industrial environment monitoring system?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Power supply</li>
+            <li onclick="checkAnswer(this, 'B')">B) Data processing and communication</li>
+            <li onclick="checkAnswer(this, 'B')">C) Storage</li>
+            <li onclick="checkAnswer(this, 'B')">D) Display</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>7. Which sensor is used for measuring temperature and humidity in the environment monitoring system?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) PIR sensor</li>
+            <li onclick="checkAnswer(this, 'C')">B) Ultrasonic sensor</li>
+            <li onclick="checkAnswer(this, 'C')">C) DHT sensor</li>
+            <li onclick="checkAnswer(this, 'C')">D) Pressure sensor</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>8. Which protocol is commonly used for messaging in IoT applications like LPWAN?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) TCP/IP</li>
+            <li onclick="checkAnswer(this, 'C')">B) HTTP</li>
+            <li onclick="checkAnswer(this, 'C')">C) MQTT</li>
+            <li onclick="checkAnswer(this, 'C')">D) FTP</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>9. The DHT sensor operates with a power supply of:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) 1.8V</li>
+            <li onclick="checkAnswer(this, 'B')">B) 3.3V to 5V</li>
+            <li onclick="checkAnswer(this, 'B')">C) 9V</li>
+            <li onclick="checkAnswer(this, 'B')">D) 12V</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>10. What does the Adafruit library provide in this setup?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Enhanced graphical display</li>
+            <li onclick="checkAnswer(this, 'B')">B) Software to work with the DHT sensor</li>
+            <li onclick="checkAnswer(this, 'B')">C) Storage management</li>
+            <li onclick="checkAnswer(this, 'B')">D) Communication protocols</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>11. Which component connects the NodeMCU to the LoRa module?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) USB cable</li>
+            <li onclick="checkAnswer(this, 'B')">B) Jumper wires</li>
+            <li onclick="checkAnswer(this, 'B')">C) Ethernet cable</li>
+            <li onclick="checkAnswer(this, 'B')">D) Bluetooth module</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>12. LoRaWAN primarily facilitates communication between:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Wired devices only</li>
+            <li onclick="checkAnswer(this, 'C')">B) Devices over short-range networks</li>
+            <li onclick="checkAnswer(this, 'C')">C) IoT devices over long-range networks</li>
+            <li onclick="checkAnswer(this, 'C')">D) Video conferencing tools</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>13. Which library is used to work with the LoRa module in Arduino?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Adafruit Radiohead</li>
+            <li onclick="checkAnswer(this, 'A')">B) Bluetooth Classic</li>
+            <li onclick="checkAnswer(this, 'A')">C) SPI Radio</li>
+            <li onclick="checkAnswer(this, 'A')">D) HTTP Module</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>14. Which of the following is a commonly used frequency for LoRa in North America?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) 433 MHz</li>
+            <li onclick="checkAnswer(this, 'C')">B) 868 MHz</li>
+            <li onclick="checkAnswer(this, 'C')">C) 915 MHz</li>
+            <li onclick="checkAnswer(this, 'C')">D) 2.4 GHz</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>15. In the environment monitoring system, data from the DHT sensor is sent:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) To the cloud every hour</li>
+            <li onclick="checkAnswer(this, 'C')">B) Directly to the user’s mobile phone</li>
+            <li onclick="checkAnswer(this, 'C')">C) To the receiver module over LoRa</li>
+            <li onclick="checkAnswer(this, 'C')">D) To a local storage device</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>16. The data sent by the transmitter module includes:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Battery status</li>
+            <li onclick="checkAnswer(this, 'C')">B) Device ID</li>
+            <li onclick="checkAnswer(this, 'C')">C) Temperature and humidity values</li>
+            <li onclick="checkAnswer(this, 'C')">D) Light intensity</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>17. What happens on the receiver module when data is received?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) It powers off</li>
+            <li onclick="checkAnswer(this, 'B')">B) It sends an acknowledgment back to the transmitter</li>
+            <li onclick="checkAnswer(this, 'B')">C) It activates a cooling fan</li>
+            <li onclick="checkAnswer(this, 'B')">D) It resets the system</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <!-- Add remaining questions following the same structure -->
+    <div class="question">
+        <p>18. Zigbee is based on which IEEE standard?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) IEEE 802.15.4</li>
+            <li onclick="checkAnswer(this, 'A')">B) IEEE 802.11ac</li>
+            <li onclick="checkAnswer(this, 'A')">C) IEEE 802.3</li>
+            <li onclick="checkAnswer(this, 'A')">D) IEEE 802.1Q</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>19. Which Zigbee device type can relay information to other nodes?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Coordinator</li>
+            <li onclick="checkAnswer(this, 'B')">B) Router</li>
+            <li onclick="checkAnswer(this, 'B')">C) End device</li>
+            <li onclick="checkAnswer(this, 'B')">D) Repeater</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>20. Zigbee communication can occur in which topology?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Bus only</li>
+            <li onclick="checkAnswer(this, 'B')">B) Star, Tree, and Mesh</li>
+            <li onclick="checkAnswer(this, 'B')">C) Line and Ring</li>
+            <li onclick="checkAnswer(this, 'B')">D) Mesh only</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>21. Which software is used to configure Xbee modules for Zigbee communication?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) XCTU</li>
+            <li onclick="checkAnswer(this, 'A')">B) MATLAB</li>
+            <li onclick="checkAnswer(this, 'A')">C) Arduino IDE</li>
+            <li onclick="checkAnswer(this, 'A')">D) LabVIEW</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>22. What command installs the Xbee library in Python?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) pip install xbee</li>
+            <li onclick="checkAnswer(this, 'A')">B) pip install zigbee</li>
+            <li onclick="checkAnswer(this, 'A')">C) install xbee library</li>
+            <li onclick="checkAnswer(this, 'A')">D) python xbee setup</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>23. In Zigbee, which device type is the network root?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) Repeater</li>
+            <li onclick="checkAnswer(this, 'D')">B) Router</li>
+            <li onclick="checkAnswer(this, 'D')">C) End device</li>
+            <li onclick="checkAnswer(this, 'D')">D) Coordinator</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>24. The range of Zigbee communication typically varies from:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) 1 to 10 meters</li>
+            <li onclick="checkAnswer(this, 'B')">B) 10 to 100 meters</li>
+            <li onclick="checkAnswer(this, 'B')">C) 100 to 500 meters</li>
+            <li onclick="checkAnswer(this, 'B')">D) 500 to 1000 meters</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>25. Which LoRa module pin connects to GPIO 4 on NodeMCU?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) INT</li>
+            <li onclick="checkAnswer(this, 'B')">B) CS</li>
+            <li onclick="checkAnswer(this, 'B')">C) RST</li>
+            <li onclick="checkAnswer(this, 'B')">D) VCC</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>26. In LoRa communication, the LED on the receiver module lights up when:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Data is successfully received</li>
+            <li onclick="checkAnswer(this, 'A')">B) The device is low on battery</li>
+            <li onclick="checkAnswer(this, 'A')">C) The device disconnects</li>
+            <li onclick="checkAnswer(this, 'A')">D) No data is received</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>27. Sigfox typically operates within the:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Licensed LTE spectrum</li>
+            <li onclick="checkAnswer(this, 'B')">B) ISM bands</li>
+            <li onclick="checkAnswer(this, 'B')">C) GSM band</li>
+            <li onclick="checkAnswer(this, 'B')">D) Wi-Fi frequencies</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>28. Zigbee is particularly suitable for:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Long-distance communication</li>
+            <li onclick="checkAnswer(this, 'C')">B) High-speed data streaming</li>
+            <li onclick="checkAnswer(this, 'C')">C) Low power, low data rate applications</li>
+            <li onclick="checkAnswer(this, 'C')">D) Video streaming applications</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>29. The XCTU software helps in:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Sensor data analysis</li>
+            <li onclick="checkAnswer(this, 'B')">B) Configuring and testing Xbee modules</li>
+            <li onclick="checkAnswer(this, 'B')">C) Cloud storage management</li>
+            <li onclick="checkAnswer(this, 'B')">D) Image processing</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>30. What is a key feature of LPWAN networks?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) High energy consumption</li>
+            <li onclick="checkAnswer(this, 'C')">B) Short communication range</li>
+            <li onclick="checkAnswer(this, 'C')">C) Long-range, low-power communication</li>
+            <li onclick="checkAnswer(this, 'C')">D) High data rate</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>31. Which of the following LPWAN technologies uses sub-GHz frequency bands?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Bluetooth</li>
+            <li onclick="checkAnswer(this, 'C')">B) Zigbee</li>
+            <li onclick="checkAnswer(this, 'C')">C) LoRa</li>
+            <li onclick="checkAnswer(this, 'C')">D) Wi-Fi</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>32. An advantage of LPWAN in IIoT is its:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Suitability for real-time video applications</li>
+            <li onclick="checkAnswer(this, 'C')">B) Limited device compatibility</li>
+            <li onclick="checkAnswer(this, 'C')">C) Extensive range and low power usage</li>
+            <li onclick="checkAnswer(this, 'C')">D) High data throughput</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>33. NodeMCU in IoT applications is based on:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Atmel processor</li>
+            <li onclick="checkAnswer(this, 'C')">B) ARM processor</li>
+            <li onclick="checkAnswer(this, 'C')">C) ESP8266 microcontroller</li>
+            <li onclick="checkAnswer(this, 'C')">D) Intel processor</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>34. The main benefit of using LoRa in industrial environments is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) High data rate transmission</li>
+            <li onclick="checkAnswer(this, 'B')">B) Low power consumption and long range</li>
+            <li onclick="checkAnswer(this, 'B')">C) Short-range communication</li>
+            <li onclick="checkAnswer(this, 'B')">D) High cost of deployment</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>35. LPWAN technologies are best suited for:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) High-speed internet</li>
+            <li onclick="checkAnswer(this, 'C')">B) Real-time video streaming</li>
+            <li onclick="checkAnswer(this, 'C')">C) Remote monitoring and control applications</li>
+            <li onclick="checkAnswer(this, 'C')">D) Gaming applications</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>36. Which of these allows broadcasting in Zigbee?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Router node</li>
+            <li onclick="checkAnswer(this, 'C')">B) End device</li>
+            <li onclick="checkAnswer(this, 'C')">C) Coordinator node</li>
+            <li onclick="checkAnswer(this, 'C')">D) All devices</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>37. The main focus of LPWAN technology in Industry 4.0 is to:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Increase power consumption</li>
+            <li onclick="checkAnswer(this, 'B')">B) Connect large numbers of devices over long distances</li>
+            <li onclick="checkAnswer(this, 'B')">C) Provide high-speed internet</li>
+            <li onclick="checkAnswer(this, 'B')">D) Enhance image resolution</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>38. What is the role of an acknowledgment message in LoRa communication?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) To send data to the cloud</li>
+            <li onclick="checkAnswer(this, 'B')">B) To confirm successful data reception</li>
+            <li onclick="checkAnswer(this, 'B')">C) To reset the receiver module</li>
+            <li onclick="checkAnswer(this, 'B')">D) To activate a warning signal</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>39. LPWAN is ideal for applications requiring:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Frequent data transmission at high speeds</li>
+            <li onclick="checkAnswer(this, 'B')">B) Minimal power consumption with long-range transmission</li>
+            <li onclick="checkAnswer(this, 'B')">C) Real-time video conferencing</li>
+            <li onclick="checkAnswer(this, 'B')">D) Complex data processing on-device</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>40. Which of the following would typically use LPWAN?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Industrial automation requiring high-speed data</li>
+            <li onclick="checkAnswer(this, 'B')">B) Remote sensing with infrequent data updates</li>
+            <li onclick="checkAnswer(this, 'B')">C) Virtual reality systems</li>
+            <li onclick="checkAnswer(this, 'B')">D) High-bandwidth cloud gaming</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    
+
+   
+    
+    
+    
+
+<<script>
+    function checkAnswer(selectedOption, correctAnswer) {
+        // Get the feedback container
+        const feedback = selectedOption.closest('.question').querySelector('.feedback');
+        // Get all options in the current question
+        const options = selectedOption.closest('ol').children;
+        
+        // Disable all options after selection
+        for (let option of options) {
+            option.style.pointerEvents = 'none';
+        }
+
+        // Check if the selected option is correct
+        if (selectedOption.innerText[0] === correctAnswer) {
+            selectedOption.style.backgroundColor = '#4CAF50'; // Correct answer (green)
+            feedback.innerHTML = "<span class='answer'>Correct!</span>";
+        } else {
+            selectedOption.style.backgroundColor = '#F44336'; // Incorrect answer (red)
+            feedback.innerHTML = `<span class='incorrect'>Incorrect! The correct answer is ${correctAnswer}.</span>`;
+            
+            // Highlight correct answer
+            for (let option of options) {
+                if (option.innerText[0] === correctAnswer) {
+                    option.style.backgroundColor = '#4CAF50'; // Correct option (green)
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

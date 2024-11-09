@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .question {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 1.1em;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            cursor: pointer;
+            margin: 8px 0;
+            padding: 10px;
+            background-color: #e6e6e6;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        li:hover {
+            background-color: #d0d0d0;
+        }
+        .answer {
+            font-weight: bold;
+            color: green;
+        }
+        .incorrect {
+            font-weight: bold;
+            color: red;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="question">
+        <p>41. Which of the following is a key benefit of using sensors in the industry?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Reduced productivity</li>
+            <li onclick="checkAnswer(this, 'B')">B) Real-time monitoring</li>
+            <li onclick="checkAnswer(this, 'B')">C) Limited visibility</li>
+            <li onclick="checkAnswer(this, 'B')">D) Increased downtime</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>42. What is the main purpose of using an accelerometer sensor in Industrial IoT applications?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Measuring gas concentration</li>
+            <li onclick="checkAnswer(this, 'C')">B) Detecting temperature variations</li>
+            <li onclick="checkAnswer(this, 'C')">C) Measuring the magnitude and direction of acceleration</li>
+            <li onclick="checkAnswer(this, 'C')">D) Measuring pressure in hydraulic systems</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>43. Which protocol is widely used in industrial communication for real-time control and automation?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) HTTP</li>
+            <li onclick="checkAnswer(this, 'B')">B) Industrial Ethernet</li>
+            <li onclick="checkAnswer(this, 'B')">C) SMTP</li>
+            <li onclick="checkAnswer(this, 'B')">D) IMAP</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>44. Which sensor is commonly used to measure temperature in industrial applications?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) MQ-2</li>
+            <li onclick="checkAnswer(this, 'C')">B) ADXL335</li>
+            <li onclick="checkAnswer(this, 'C')">C) DS1621</li>
+            <li onclick="checkAnswer(this, 'C')">D) MQ-9</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>45. In IIoT, which architecture layer handles data storage and processing?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) Sensing Layer</li>
+            <li onclick="checkAnswer(this, 'D')">B) Application Layer</li>
+            <li onclick="checkAnswer(this, 'D')">C) Network Layer</li>
+            <li onclick="checkAnswer(this, 'D')">D) Data Management Layer</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>46. What is the main purpose of a gas sensor in industrial settings?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Measuring acceleration</li>
+            <li onclick="checkAnswer(this, 'B')">B) Detecting harmful gas concentrations</li>
+            <li onclick="checkAnswer(this, 'B')">C) Measuring temperature</li>
+            <li onclick="checkAnswer(this, 'B')">D) Counting products</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>47. Which of the following is not a typical feature of Industrial IoT?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Advanced analytics</li>
+            <li onclick="checkAnswer(this, 'B')">B) High product downtime</li>
+            <li onclick="checkAnswer(this, 'B')">C) System failure detection</li>
+            <li onclick="checkAnswer(this, 'B')">D) Enhanced productivity</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>48. Which protocol in Industrial IoT is used to connect client-server devices through TCP/IP?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) EtherCAT</li>
+            <li onclick="checkAnswer(this, 'B')">B) Modbus-TCP</li>
+            <li onclick="checkAnswer(this, 'B')">C) Fieldbus</li>
+            <li onclick="checkAnswer(this, 'B')">D) DeviceNet</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>49. EtherCAT is based on which IEEE standard?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) IEEE 802.3</li>
+            <li onclick="checkAnswer(this, 'A')">B) IEEE 802.15</li>
+            <li onclick="checkAnswer(this, 'A')">C) IEEE 802.11</li>
+            <li onclick="checkAnswer(this, 'A')">D) IEEE 802.1Q</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>50. What is the function of a pressure sensor in IIoT applications?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Measuring temperature</li>
+            <li onclick="checkAnswer(this, 'C')">B) Detecting product count</li>
+            <li onclick="checkAnswer(this, 'C')">C) Measuring pressure in hydraulic systems</li>
+            <li onclick="checkAnswer(this, 'C')">D) Sensing gas concentrations</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>51. Which topology does Ethernet/IP typically use?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Star</li>
+            <li onclick="checkAnswer(this, 'A')">B) Ring</li>
+            <li onclick="checkAnswer(this, 'A')">C) Line</li>
+            <li onclick="checkAnswer(this, 'A')">D) Mesh</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>52. In Industry 4.0, real-time monitoring is primarily aimed at improving which aspect?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Security</li>
+            <li onclick="checkAnswer(this, 'B')">B) Productivity</li>
+            <li onclick="checkAnswer(this, 'B')">C) Downtime</li>
+            <li onclick="checkAnswer(this, 'B')">D) Flexibility</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>53. Which gas sensor type is commonly used to detect the presence of VOCs?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Accelerometer</li>
+            <li onclick="checkAnswer(this, 'B')">B) MOS</li>
+            <li onclick="checkAnswer(this, 'B')">C) Magnetostrictive</li>
+            <li onclick="checkAnswer(this, 'B')">D) Torque</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>54. What is the primary characteristic of an accelerometer sensor?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Detects gas leakage</li>
+            <li onclick="checkAnswer(this, 'B')">B) Measures acceleration</li>
+            <li onclick="checkAnswer(this, 'B')">C) Measures rotational speed</li>
+            <li onclick="checkAnswer(this, 'B')">D) Monitors temperature</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>55. Which communication type in Ethernet/IP is primarily used for non-time-critical data?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Real-Time</li>
+            <li onclick="checkAnswer(this, 'C')">B) Implicit</li>
+            <li onclick="checkAnswer(this, 'C')">C) Explicit</li>
+            <li onclick="checkAnswer(this, 'C')">D) Isochronous</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>56. What is a common application of PIR sensors in industrial settings?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Monitoring gas levels</li>
+            <li onclick="checkAnswer(this, 'B')">B) Detecting human presence</li>
+            <li onclick="checkAnswer(this, 'B')">C) Measuring water pressure</li>
+            <li onclick="checkAnswer(this, 'B')">D) Counting product units</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>57. Which of the following sensors is used for object detection and measuring distance?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Temperature sensor</li>
+            <li onclick="checkAnswer(this, 'C')">B) Optical sensor</li>
+            <li onclick="checkAnswer(this, 'C')">C) Ultrasonic sensor</li>
+            <li onclick="checkAnswer(this, 'C')">D) Gas sensor</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>58. In Modbus-TCP, the ADU is identified by which header?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) TCP/IP</li>
+            <li onclick="checkAnswer(this, 'B')">B) MBAP</li>
+            <li onclick="checkAnswer(this, 'B')">C) UDP</li>
+            <li onclick="checkAnswer(this, 'B')">D) FDL</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>59. Which component in the IIoT architecture is responsible for remote diagnosis?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Sensor Layer</li>
+            <li onclick="checkAnswer(this, 'B')">B) Application Layer</li>
+            <li onclick="checkAnswer(this, 'B')">C) Communication Layer</li>
+            <li onclick="checkAnswer(this, 'B')">D) Sensing Layer</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>60. Which sensor type is typically used for quality testing in manufacturing?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Torque sensor</li>
+            <li onclick="checkAnswer(this, 'C')">B) Gas sensor</li>
+            <li onclick="checkAnswer(this, 'C')">C) Image sensor</li>
+            <li onclick="checkAnswer(this, 'C')">D) Level sensor</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    <div class="question">
+        <p>1. What is the main function of a magnetostrictive sensor?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) Detecting human presence</li>
+            <li onclick="checkAnswer(this, 'D')">B) Measuring torque</li>
+            <li onclick="checkAnswer(this, 'D')">C) Measuring acceleration</li>
+            <li onclick="checkAnswer(this, 'D')">D) Detecting time-varying stresses</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>2. Which of the following is a characteristic of EtherCAT?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Centralized control</li>
+            <li onclick="checkAnswer(this, 'C')">B) Limited topology options</li>
+            <li onclick="checkAnswer(this, 'C')">C) High synchronization accuracy</li>
+            <li onclick="checkAnswer(this, 'C')">D) High transmission delay</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>3. What is the primary application of an image sensor in Industrial IoT?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Speed measurement</li>
+            <li onclick="checkAnswer(this, 'B')">B) Distance measurement</li>
+            <li onclick="checkAnswer(this, 'B')">C) Temperature sensing</li>
+            <li onclick="checkAnswer(this, 'B')">D) Gas detection</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>4. The Profinet protocol is mainly used for which purpose?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Remote monitoring</li>
+            <li onclick="checkAnswer(this, 'B')">B) Real-time process control</li>
+            <li onclick="checkAnswer(this, 'B')">C) Temperature sensing</li>
+            <li onclick="checkAnswer(this, 'B')">D) Gas detection</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>5. Which of the following layers is part of the Modbus-TCP protocol structure?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Physical Layer</li>
+            <li onclick="checkAnswer(this, 'C')">B) Transport Layer</li>
+            <li onclick="checkAnswer(this, 'C')">C) Application Data Unit</li>
+            <li onclick="checkAnswer(this, 'C')">D) Network Layer</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>6. A torque sensor is primarily used to measure what?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Pressure</li>
+            <li onclick="checkAnswer(this, 'B')">B) Speed of rotation</li>
+            <li onclick="checkAnswer(this, 'B')">C) Distance</li>
+            <li onclick="checkAnswer(this, 'B')">D) Temperature</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>7. In Industry 4.0, what is the primary benefit of using Remote Control Units?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Cost reduction</li>
+            <li onclick="checkAnswer(this, 'B')">B) Remote access and operation</li>
+            <li onclick="checkAnswer(this, 'B')">C) Data storage</li>
+            <li onclick="checkAnswer(this, 'B')">D) Real-time monitoring</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>8. Which sensor type is used to measure the level of a liquid in a tank?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Temperature sensor</li>
+            <li onclick="checkAnswer(this, 'C')">B) Flow sensor</li>
+            <li onclick="checkAnswer(this, 'C')">C) Ultrasonic sensor</li>
+            <li onclick="checkAnswer(this, 'C')">D) Optical sensor</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>9. What type of data transfer is required for real-time sensor applications?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Asynchronous</li>
+            <li onclick="checkAnswer(this, 'C')">B) Periodic</li>
+            <li onclick="checkAnswer(this, 'C')">C) Isochronous</li>
+            <li onclick="checkAnswer(this, 'C')">D) Serial</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>10. Which technology is used for time-sensitive networking in industrial applications?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Modbus</li>
+            <li onclick="checkAnswer(this, 'B')">B) TSN</li>
+            <li onclick="checkAnswer(this, 'B')">C) EtherNet/IP</li>
+            <li onclick="checkAnswer(this, 'B')">D) DeviceNet</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>11. Which communication standard is most commonly used for Local Area Networks in industrial automation?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) DSL</li>
+            <li onclick="checkAnswer(this, 'C')">B) Modbus</li>
+            <li onclick="checkAnswer(this, 'C')">C) Fieldbus</li>
+            <li onclick="checkAnswer(this, 'C')">D) PSTN</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>12. Which feature is essential for high-reliability applications in Industrial IoT?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) High latency</li>
+            <li onclick="checkAnswer(this, 'C')">B) Low throughput</li>
+            <li onclick="checkAnswer(this, 'C')">C) Deterministic communication</li>
+            <li onclick="checkAnswer(this, 'C')">D) Reduced uptime</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>13. What does “low duty-cycle” refer to in industrial communication?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Reduced data flow</li>
+            <li onclick="checkAnswer(this, 'B')">B) Reduced transmission time</li>
+            <li onclick="checkAnswer(this, 'B')">C) Increased data flow</li>
+            <li onclick="checkAnswer(this, 'B')">D) Increased downtime</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>14. Which protocol is used to provide secure and synchronized communication between industrial devices?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Profibus</li>
+            <li onclick="checkAnswer(this, 'B')">B) TSN</li>
+            <li onclick="checkAnswer(this, 'B')">C) Modbus</li>
+            <li onclick="checkAnswer(this, 'B')">D) CC-Link</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>15. Which device in industrial IoT monitors and prevents system failure through data analysis?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Application Layer</li>
+            <li onclick="checkAnswer(this, 'A')">B) Quality Testing Unit</li>
+            <li onclick="checkAnswer(this, 'A')">C) Sensing Device</li>
+            <li onclick="checkAnswer(this, 'A')">D) Remote Control Unit</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>16. In Industrial IoT, which type of sensor is used to manage environmental safety by detecting toxic gas?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Temperature sensor</li>
+            <li onclick="checkAnswer(this, 'B')">B) Gas sensor</li>
+            <li onclick="checkAnswer(this, 'B')">C) Level sensor</li>
+            <li onclick="checkAnswer(this, 'B')">D) Accelerometer sensor</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+
+   
+    
+    
+    
+
+<<script>
+    function checkAnswer(selectedOption, correctAnswer) {
+        // Get the feedback container
+        const feedback = selectedOption.closest('.question').querySelector('.feedback');
+        // Get all options in the current question
+        const options = selectedOption.closest('ol').children;
+        
+        // Disable all options after selection
+        for (let option of options) {
+            option.style.pointerEvents = 'none';
+        }
+
+        // Check if the selected option is correct
+        if (selectedOption.innerText[0] === correctAnswer) {
+            selectedOption.style.backgroundColor = '#4CAF50'; // Correct answer (green)
+            feedback.innerHTML = "<span class='answer'>Correct!</span>";
+        } else {
+            selectedOption.style.backgroundColor = '#F44336'; // Incorrect answer (red)
+            feedback.innerHTML = `<span class='incorrect'>Incorrect! The correct answer is ${correctAnswer}.</span>`;
+            
+            // Highlight correct answer
+            for (let option of options) {
+                if (option.innerText[0] === correctAnswer) {
+                    option.style.backgroundColor = '#4CAF50'; // Correct option (green)
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .question {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 1.1em;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            cursor: pointer;
+            margin: 8px 0;
+            padding: 10px;
+            background-color: #e6e6e6;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        li:hover {
+            background-color: #d0d0d0;
+        }
+        .answer {
+            font-weight: bold;
+            color: green;
+        }
+        .incorrect {
+            font-weight: bold;
+            color: red;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="question">
+        <p>1. What does IIoT stand for?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Industrial Internet of Things</li>
+            <li onclick="checkAnswer(this, 'A')">B) Internet Interchange of Technology</li>
+            <li onclick="checkAnswer(this, 'A')">C) Integrated Internet of Things</li>
+            <li onclick="checkAnswer(this, 'A')">D) Industrial Interconnection of Technology</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>2. Which company coined the term "Industrial Internet"?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Microsoft</li>
+            <li onclick="checkAnswer(this, 'C')">B) IBM</li>
+            <li onclick="checkAnswer(this, 'C')">C) General Electric</li>
+            <li onclick="checkAnswer(this, 'C')">D) Google</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>3. Which of these is NOT a key component of IIoT?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) Smart Objects</li>
+            <li onclick="checkAnswer(this, 'D')">B) Business Intelligence</li>
+            <li onclick="checkAnswer(this, 'D')">C) Networking Infrastructure</li>
+            <li onclick="checkAnswer(this, 'D')">D) Cryptocurrency</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>4. Which phase is the "Third Wave" in industrial innovation according to GE?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Industrial Revolution</li>
+            <li onclick="checkAnswer(this, 'C')">B) Internet Revolution</li>
+            <li onclick="checkAnswer(this, 'C')">C) Industrial Internet</li>
+            <li onclick="checkAnswer(this, 'C')">D) Mechanical Revolution</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>5. The CIA triad in cybersecurity stands for:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Connectivity, Integration, Accessibility</li>
+            <li onclick="checkAnswer(this, 'B')">B) Confidentiality, Integrity, Availability</li>
+            <li onclick="checkAnswer(this, 'B')">C) Collaboration, Innovation, Authentication</li>
+            <li onclick="checkAnswer(this, 'B')">D) Compliance, Intelligence, Authorization</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>6. Which cybersecurity component protects network architecture from unauthorized access?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Application Security</li>
+            <li onclick="checkAnswer(this, 'C')">B) Information Security</li>
+            <li onclick="checkAnswer(this, 'C')">C) Network Security</li>
+            <li onclick="checkAnswer(this, 'C')">D) Operational Security</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>7. Which is an example of a cybersecurity threat?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Quality control</li>
+            <li onclick="checkAnswer(this, 'B')">B) Phishing</li>
+            <li onclick="checkAnswer(this, 'B')">C) Process automation</li>
+            <li onclick="checkAnswer(this, 'B')">D) Predictive maintenance</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>8. In the context of IIoT, what is a primary benefit of using RFID tags in the mining industry?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Increasing data storage</li>
+            <li onclick="checkAnswer(this, 'B')">B) Tracking and locating miners</li>
+            <li onclick="checkAnswer(this, 'B')">C) Enhancing visual appeal</li>
+            <li onclick="checkAnswer(this, 'B')">D) Decreasing sensor costs</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>9. What is the primary purpose of augmented reality (AR) in industrial settings?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Displaying live video</li>
+            <li onclick="checkAnswer(this, 'B')">B) Providing visual overlays for training and maintenance</li>
+            <li onclick="checkAnswer(this, 'B')">C) Text-based alerts only</li>
+            <li onclick="checkAnswer(this, 'B')">D) Replacing physical documents</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>10. The key characteristic of a "smart factory" is its ability to:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Operate independently of data</li>
+            <li onclick="checkAnswer(this, 'B')">B) Adapt and optimize operations autonomously</li>
+            <li onclick="checkAnswer(this, 'B')">C) Eliminate human intervention entirely</li>
+            <li onclick="checkAnswer(this, 'B')">D) Operate only during business hours</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>11. In which sector is SCADA most commonly used?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Retail</li>
+            <li onclick="checkAnswer(this, 'B')">B) Oil and gas</li>
+            <li onclick="checkAnswer(this, 'B')">C) Education</li>
+            <li onclick="checkAnswer(this, 'B')">D) Fashion</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>12. What is an electro-hydrostatic actuation system known for?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) High-resolution imaging</li>
+            <li onclick="checkAnswer(this, 'B')">B) Combining electric and hydraulic benefits</li>
+            <li onclick="checkAnswer(this, 'B')">C) Low-force output</li>
+            <li onclick="checkAnswer(this, 'B')">D) Manual control</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>13. Which IIoT technology assists in predictive maintenance by identifying equipment faults in advance?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Manual inspections</li>
+            <li onclick="checkAnswer(this, 'B')">B) Advanced analytics</li>
+            <li onclick="checkAnswer(this, 'B')">C) Offline databases</li>
+            <li onclick="checkAnswer(this, 'B')">D) Paper logs</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>14. What type of data does IIoT primarily rely on for process improvements?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Social media data</li>
+            <li onclick="checkAnswer(this, 'B')">B) Sensor-generated data</li>
+            <li onclick="checkAnswer(this, 'B')">C) Customer reviews</li>
+            <li onclick="checkAnswer(this, 'B')">D) Printed reports</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>15. A "smart sensor" is defined as a sensor that:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Only measures temperature</li>
+            <li onclick="checkAnswer(this, 'B')">B) Communicates data to a network</li>
+            <li onclick="checkAnswer(this, 'B')">C) Is embedded in clothing</li>
+            <li onclick="checkAnswer(this, 'B')">D) Requires manual data transfer</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+
+
+    <div class="question">
+        <p>15. What does manual data transfer involve?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Printing reports</li>
+            <li onclick="checkAnswer(this, 'B')">B) Communicates data to a network</li>
+            <li onclick="checkAnswer(this, 'B')">C) Manual document storage</li>
+            <li onclick="checkAnswer(this, 'B')">D) Data entry using handwritten forms</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>16. Which of these is a use case for smart sensors in agriculture?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Printing reports</li>
+            <li onclick="checkAnswer(this, 'B')">B) Soil moisture detection</li>
+            <li onclick="checkAnswer(this, 'B')">C) Manual crop inspection</li>
+            <li onclick="checkAnswer(this, 'B')">D) Transportation monitoring</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>17. The "5C Architecture" in CPS includes all EXCEPT:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) Cognitive Layer</li>
+            <li onclick="checkAnswer(this, 'D')">B) Cyber Layer</li>
+            <li onclick="checkAnswer(this, 'D')">C) Connection Layer</li>
+            <li onclick="checkAnswer(this, 'D')">D) Creation Layer</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>18. What does operational security (OPSEC) primarily focus on in IIoT?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Reducing production speed</li>
+            <li onclick="checkAnswer(this, 'B')">B) Protecting information benefits in business</li>
+            <li onclick="checkAnswer(this, 'B')">C) Printing company data</li>
+            <li onclick="checkAnswer(this, 'B')">D) Manual inspection</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>19. The primary benefit of predictive maintenance in IIoT is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Faster manual repairs</li>
+            <li onclick="checkAnswer(this, 'C')">B) Reduced data storage</li>
+            <li onclick="checkAnswer(this, 'C')">C) Prevention of unexpected failures</li>
+            <li onclick="checkAnswer(this, 'C')">D) Higher product prices</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>20. In which area is IIoT applied in the healthcare industry?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Patient entertainment</li>
+            <li onclick="checkAnswer(this, 'B')">B) Real-time monitoring of devices and patients</li>
+            <li onclick="checkAnswer(this, 'B')">C) Retail operations</li>
+            <li onclick="checkAnswer(this, 'B')">D) Educational assessments</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>21. A key enabler for Industrial Process 4.0 in IIoT is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Paper-based reporting</li>
+            <li onclick="checkAnswer(this, 'B')">B) Cloud computing</li>
+            <li onclick="checkAnswer(this, 'B')">C) Manual labor</li>
+            <li onclick="checkAnswer(this, 'B')">D) Randomized data sampling</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>22. SCADA stands for:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Secure Computer Access Data Automation</li>
+            <li onclick="checkAnswer(this, 'B')">B) Supervisory Control and Data Acquisition</li>
+            <li onclick="checkAnswer(this, 'B')">C) Systemic Control of Automated Devices</li>
+            <li onclick="checkAnswer(this, 'B')">D) Safe Computing and Data Assessment</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>23. Which is NOT an IIoT application in the oil and gas sector?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Leak detection</li>
+            <li onclick="checkAnswer(this, 'B')">B) Inventory management</li>
+            <li onclick="checkAnswer(this, 'B')">C) Predictive maintenance</li>
+            <li onclick="checkAnswer(this, 'B')">D) Flow simulation</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>24. IIoT is commonly used for real-time monitoring in which industry?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Fashion</li>
+            <li onclick="checkAnswer(this, 'C')">B) Education</li>
+            <li onclick="checkAnswer(this, 'C')">C) Transportation and logistics</li>
+            <li onclick="checkAnswer(this, 'C')">D) Fine arts</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>25. A primary benefit of using IIoT in firefighting is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Financial reporting</li>
+            <li onclick="checkAnswer(this, 'B')">B) Real-time disaster monitoring</li>
+            <li onclick="checkAnswer(this, 'B')">C) Fashion trend prediction</li>
+            <li onclick="checkAnswer(this, 'B')">D) Manual location tracking</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>26. Which technology is vital for data integration in IIoT systems?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Cloud storage and big data processing</li>
+            <li onclick="checkAnswer(this, 'A')">B) Written logs</li>
+            <li onclick="checkAnswer(this, 'A')">C) Printed spreadsheets</li>
+            <li onclick="checkAnswer(this, 'A')">D) Physical filing</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>27. An example of an IIoT sensor in healthcare is:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Soil moisture sensor</li>
+            <li onclick="checkAnswer(this, 'B')">B) Smart pill</li>
+            <li onclick="checkAnswer(this, 'B')">C) Temperature gauge</li>
+            <li onclick="checkAnswer(this, 'B')">D) Manual scale</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>28. In the manufacturing industry, IIoT can improve operational efficiency through:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Real-time data analysis</li>
+            <li onclick="checkAnswer(this, 'A')">B) Printed production logs</li>
+            <li onclick="checkAnswer(this, 'A')">C) Manual inspections</li>
+            <li onclick="checkAnswer(this, 'A')">D) Traditional sensors only</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>29. In transportation, IIoT sensors are used to track:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Shipment location and condition</li>
+            <li onclick="checkAnswer(this, 'A')">B) Customer satisfaction</li>
+            <li onclick="checkAnswer(this, 'A')">C) Price trends</li>
+            <li onclick="checkAnswer(this, 'A')">D) Employee morale</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>30. The purpose of a "smart factory" is to:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Rely only on human supervision</li>
+            <li onclick="checkAnswer(this, 'B')">B) Operate autonomously with minimal human intervention</li>
+            <li onclick="checkAnswer(this, 'B')">C) Eliminate automation</li>
+            <li onclick="checkAnswer(this, 'B')">D) Limit communication within the system</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    <div class="question">
+        <p>31. What type of maintenance approach does IIoT enable?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Predictive maintenance</li>
+            <li onclick="checkAnswer(this, 'A')">B) Reactive maintenance</li>
+            <li onclick="checkAnswer(this, 'A')">C) Manual maintenance</li>
+            <li onclick="checkAnswer(this, 'A')">D) Randomized checks</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>32. IIoT applications in retail include:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) RFID for tracking inventory</li>
+            <li onclick="checkAnswer(this, 'A')">B) Data storage for records only</li>
+            <li onclick="checkAnswer(this, 'A')">C) Monitoring soil moisture</li>
+            <li onclick="checkAnswer(this, 'A')">D) Manual stock tracking</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>33. An electro-pneumatic system combines which two types of control?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Manual and hydraulic</li>
+            <li onclick="checkAnswer(this, 'C')">B) Hydraulic and electric</li>
+            <li onclick="checkAnswer(this, 'C')">C) Electric and pneumatic</li>
+            <li onclick="checkAnswer(this, 'C')">D) Manual and pneumatic</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>34. Which layer of 5C Architecture deals with data analysis?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Cyber Layer</li>
+            <li onclick="checkAnswer(this, 'B')">B) Cognitive Layer</li>
+            <li onclick="checkAnswer(this, 'B')">C) Conversion Layer</li>
+            <li onclick="checkAnswer(this, 'B')">D) Connection Layer</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>35. What is the main challenge in IIoT cybersecurity?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Random data generation</li>
+            <li onclick="checkAnswer(this, 'B')">B) Securing interconnected devices</li>
+            <li onclick="checkAnswer(this, 'B')">C) Manual inspections</li>
+            <li onclick="checkAnswer(this, 'B')">D) Eliminating sensors</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>36. What is a primary application of IIoT in the power industry?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Predictive failure detection of equipment</li>
+            <li onclick="checkAnswer(this, 'A')">B) Manual repair tracking</li>
+            <li onclick="checkAnswer(this, 'A')">C) Minimizing energy usage</li>
+            <li onclick="checkAnswer(this, 'A')">D) Enhancing visual branding</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>37. In IIoT, "ubiquitous sensing" refers to:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Limited sensor application</li>
+            <li onclick="checkAnswer(this, 'B')">B) Sensors applied across multiple areas for broad control</li>
+            <li onclick="checkAnswer(this, 'B')">C) Manual sensor data entry</li>
+            <li onclick="checkAnswer(this, 'B')">D) Randomized sensor usage</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>38. Which IIoT concept enhances workplace safety?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Predictive analytics</li>
+            <li onclick="checkAnswer(this, 'A')">B) Social media monitoring</li>
+            <li onclick="checkAnswer(this, 'A')">C) Printing safety logs</li>
+            <li onclick="checkAnswer(this, 'A')">D) Randomized checks</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>39. The Industrial Internet Consortium (IIC) is associated with:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) IoT marketing</li>
+            <li onclick="checkAnswer(this, 'B')">B) Standardizing and promoting IIoT frameworks</li>
+            <li onclick="checkAnswer(this, 'B')">C) Traditional manufacturing processes</li>
+            <li onclick="checkAnswer(this, 'B')">D) Online retail</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>40. Which industry has adopted IIoT for predictive and remote diagnostics?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Financial services</li>
+            <li onclick="checkAnswer(this, 'B')">B) Healthcare</li>
+            <li onclick="checkAnswer(this, 'B')">C) Fashion</li>
+            <li onclick="checkAnswer(this, 'B')">D) Agriculture</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    
+    
+    
+
+<<script>
+    function checkAnswer(selectedOption, correctAnswer) {
+        // Get the feedback container
+        const feedback = selectedOption.closest('.question').querySelector('.feedback');
+        // Get all options in the current question
+        const options = selectedOption.closest('ol').children;
+        
+        // Disable all options after selection
+        for (let option of options) {
+            option.style.pointerEvents = 'none';
+        }
+
+        // Check if the selected option is correct
+        if (selectedOption.innerText[0] === correctAnswer) {
+            selectedOption.style.backgroundColor = '#4CAF50'; // Correct answer (green)
+            feedback.innerHTML = "<span class='answer'>Correct!</span>";
+        } else {
+            selectedOption.style.backgroundColor = '#F44336'; // Incorrect answer (red)
+            feedback.innerHTML = `<span class='incorrect'>Incorrect! The correct answer is ${correctAnswer}.</span>`;
+            
+            // Highlight correct answer
+            for (let option of options) {
+                if (option.innerText[0] === correctAnswer) {
+                    option.style.backgroundColor = '#4CAF50'; // Correct option (green)
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

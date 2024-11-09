@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .question {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 1.1em;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            cursor: pointer;
+            margin: 8px 0;
+            padding: 10px;
+            background-color: #e6e6e6;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        li:hover {
+            background-color: #d0d0d0;
+        }
+        .answer {
+            font-weight: bold;
+            color: green;
+        }
+        .incorrect {
+            font-weight: bold;
+            color: red;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="question">
+    <p>1. What does the Fourth Industrial Revolution emphasize?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Assembly lines</li>
+        <li onclick="checkAnswer(this, 'B')">B) Digitalization and smart technology</li>
+        <li onclick="checkAnswer(this, 'B')">C) Steam engines</li>
+        <li onclick="checkAnswer(this, 'B')">D) Mechanical production</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>2. Who coined the term "Fourth Industrial Revolution"?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Karl Marx</li>
+        <li onclick="checkAnswer(this, 'B')">B) Klaus Schwab</li>
+        <li onclick="checkAnswer(this, 'B')">C) Isaac Newton</li>
+        <li onclick="checkAnswer(this, 'B')">D) Adam Smith</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>3. The Fourth Industrial Revolution is also known as:</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'C')">A) Digital Revolution</li>
+        <li onclick="checkAnswer(this, 'C')">B) Cyber Revolution</li>
+        <li onclick="checkAnswer(this, 'C')">C) The Second Machine Age</li>
+        <li onclick="checkAnswer(this, 'C')">D) The Green Revolution</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>4. Which of these is NOT a feature of Industry 4.0?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'C')">A) Smart machines</li>
+        <li onclick="checkAnswer(this, 'C')">B) Quantum computing</li>
+        <li onclick="checkAnswer(this, 'C')">C) Handcrafted production</li>
+        <li onclick="checkAnswer(this, 'C')">D) Artificial Intelligence (AI)</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>5. In Industry 4.0, which of these technologies is central to monitoring production in real-time?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'A')">A) IoT (Internet of Things)</li>
+        <li onclick="checkAnswer(this, 'A')">B) Manual inspections</li>
+        <li onclick="checkAnswer(this, 'A')">C) Steam engines</li>
+        <li onclick="checkAnswer(this, 'A')">D) Handwritten records</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>6. Which industry is an example of applying smart connected devices?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'C')">A) Traditional farming</li>
+        <li onclick="checkAnswer(this, 'C')">B) Retail banking</li>
+        <li onclick="checkAnswer(this, 'C')">C) Smart factories</li>
+        <li onclick="checkAnswer(this, 'C')">D) Manual construction</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>7. What is a "smart factory"?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) A factory with only human workers</li>
+        <li onclick="checkAnswer(this, 'B')">B) A factory with self-optimizing and adaptive systems</li>
+        <li onclick="checkAnswer(this, 'B')">C) A factory without any machines</li>
+        <li onclick="checkAnswer(this, 'B')">D) A factory only using assembly lines</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>8. Which technology enables product tracking in a smart supply chain?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'A')">A) Radio Frequency Identification (RFID)</li>
+        <li onclick="checkAnswer(this, 'A')">B) Manual tracking</li>
+        <li onclick="checkAnswer(this, 'A')">C) Telephone communication</li>
+        <li onclick="checkAnswer(this, 'A')">D) Fax machines</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>9. Industry 4.0 emphasizes connecting which three main areas?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'A')">A) Digital, Biological, Physical</li>
+        <li onclick="checkAnswer(this, 'A')">B) Economic, Social, Financial</li>
+        <li onclick="checkAnswer(this, 'A')">C) National, Local, International</li>
+        <li onclick="checkAnswer(this, 'A')">D) Physical, Emotional, Spiritual</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>10. The Fourth Industrial Revolution impacts which sectors?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'C')">A) Only manufacturing</li>
+        <li onclick="checkAnswer(this, 'C')">B) Education and sports</li>
+        <li onclick="checkAnswer(this, 'C')">C) All sectors, including healthcare, finance, and manufacturing</li>
+        <li onclick="checkAnswer(this, 'C')">D) Only agriculture</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>11. Which is NOT a characteristic of smart products?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Interconnected</li>
+        <li onclick="checkAnswer(this, 'B')">B) Independent of sensors</li>
+        <li onclick="checkAnswer(this, 'B')">C) Data-sharing capable</li>
+        <li onclick="checkAnswer(this, 'B')">D) Self-optimizing</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>12. What is a primary goal of Industry 4.0 in manufacturing?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'C')">A) Reduce automation</li>
+        <li onclick="checkAnswer(this, 'C')">B) Increase manual labor</li>
+        <li onclick="checkAnswer(this, 'C')">C) Enhance operational efficiency</li>
+        <li onclick="checkAnswer(this, 'C')">D) Replace all jobs with robots</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>13. Which of these supports predictive maintenance in Industry 4.0?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Reactive repair</li>
+        <li onclick="checkAnswer(this, 'B')">B) Internet of Things (IoT)</li>
+        <li onclick="checkAnswer(this, 'B')">C) Manual monitoring</li>
+        <li onclick="checkAnswer(this, 'B')">D) Traditional inspection</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>14. Which of these is considered a Physical Megatrend in Industry 4.0?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Social media</li>
+        <li onclick="checkAnswer(this, 'B')">B) 3D printing</li>
+        <li onclick="checkAnswer(this, 'B')">C) Newspaper printing</li>
+        <li onclick="checkAnswer(this, 'B')">D) Television broadcasting</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>15. What is the purpose of Artificial Intelligence in Industry 4.0?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'C')">A) Increase manual errors</li>
+        <li onclick="checkAnswer(this, 'C')">B) Increase human workload</li>
+        <li onclick="checkAnswer(this, 'C')">C) Automate tasks and analyze data</li>
+        <li onclick="checkAnswer(this, 'C')">D) Replace computers with humans</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>16. What are "tipping points" in Industry 4.0?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Revolutions in art</li>
+        <li onclick="checkAnswer(this, 'B')">B) Key milestones expected in technological advancements</li>
+        <li onclick="checkAnswer(this, 'B')">C) Points where manual processes outperform automation</li>
+        <li onclick="checkAnswer(this, 'B')">D) Moments of employee gatherings</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>17. Industry 4.0 encourages using renewable energy for:</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Cost-saving only</li>
+        <li onclick="checkAnswer(this, 'B')">B) Environmental sustainability</li>
+        <li onclick="checkAnswer(this, 'B')">C) Labor reduction</li>
+        <li onclick="checkAnswer(this, 'B')">D) Increased resource dependency</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>18. Which of these is a technology used for data analytics in Industry 4.0?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Spreadsheet applications</li>
+        <li onclick="checkAnswer(this, 'B')">B) Big Data</li>
+        <li onclick="checkAnswer(this, 'B')">C) Desktop calculators</li>
+        <li onclick="checkAnswer(this, 'B')">D) Telephones</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>19. Which of these is an environmental concern in Industry 4.0?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'A')">A) Waste reduction</li>
+        <li onclick="checkAnswer(this, 'A')">B) Employee management</li>
+        <li onclick="checkAnswer(this, 'A')">C) Product promotion</li>
+        <li onclick="checkAnswer(this, 'A')">D) Traditional farming</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>20. The term "Lean Manufacturing" is associated with which company?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Ford</li>
+        <li onclick="checkAnswer(this, 'B')">B) Toyota</li>
+        <li onclick="checkAnswer(this, 'B')">C) General Electric</li>
+        <li onclick="checkAnswer(this, 'B')">D) IBM</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>21. Which concept in Industry 4.0 aims to eliminate unnecessary production?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'A')">A) Over-processing</li>
+        <li onclick="checkAnswer(this, 'A')">B) Assembly lines</li>
+        <li onclick="checkAnswer(this, 'A')">C) Predictive processing</li>
+        <li onclick="checkAnswer(this, 'A')">D) Resource monitoring</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>22. The "Just-in-Time" principle is aimed at:</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Building inventory</li>
+        <li onclick="checkAnswer(this, 'B')">B) Production efficiency</li>
+        <li onclick="checkAnswer(this, 'B')">C) Increasing waste</li>
+        <li onclick="checkAnswer(this, 'B')">D) Reducing employee productivity</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>23. Which layer in a smart factory handles data acquisition?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'A')">A) Physical layer</li>
+        <li onclick="checkAnswer(this, 'A')">B) Connectivity layer</li>
+        <li onclick="checkAnswer(this, 'A')">C) Digital layer</li>
+        <li onclick="checkAnswer(this, 'A')">D) All layers</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>24. A major factor in globalization within Industry 4.0 is:</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Isolated production</li>
+        <li onclick="checkAnswer(this, 'B')">B) Connectivity and digitization</li>
+        <li onclick="checkAnswer(this, 'B')">C) Increase in physical labor</li>
+        <li onclick="checkAnswer(this, 'B')">D) Limited resources</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>25. "Smart engineering" refers to:</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Manual product design</li>
+        <li onclick="checkAnswer(this, 'B')">B) Enhanced product design, development, and planning</li>
+        <li onclick="checkAnswer(this, 'B')">C) Ignoring customer needs</li>
+        <li onclick="checkAnswer(this, 'B')">D) Traditional manufacturing techniques</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>26. What is the role of government regulation in Industry 4.0?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Increase waste</li>
+        <li onclick="checkAnswer(this, 'B')">B) Protect public and private sectors</li>
+        <li onclick="checkAnswer(this, 'B')">C) Reduce technology usage</li>
+        <li onclick="checkAnswer(this, 'B')">D) Focus on manual labor</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>27. Which of these enables smart factories to predict quality issues?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'A')">A) Historical data</li>
+        <li onclick="checkAnswer(this, 'A')">B) Manual labor</li>
+        <li onclick="checkAnswer(this, 'A')">C) Process optimization</li>
+        <li onclick="checkAnswer(this, 'A')">D) Physical inspections</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>28. Smart factories often use what to improve safety?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Human monitors</li>
+        <li onclick="checkAnswer(this, 'B')">B) Augmented Reality (AR)</li>
+        <li onclick="checkAnswer(this, 'B')">C) Manual tools</li>
+        <li onclick="checkAnswer(this, 'B')">D) Printed manuals</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>29. Lean production primarily seeks to reduce:</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Employee numbers</li>
+        <li onclick="checkAnswer(this, 'B')">B) Non-value-adding activities</li>
+        <li onclick="checkAnswer(this, 'B')">C) Product quality</li>
+        <li onclick="checkAnswer(this, 'B')">D) Digital data</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>30. What is "mass customization"?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Mass-producing a single product type</li>
+        <li onclick="checkAnswer(this, 'B')">B) Customizing products to meet local and global needs</li>
+        <li onclick="checkAnswer(this, 'B')">C) Creating limited products for unique clients</li>
+        <li onclick="checkAnswer(this, 'B')">D) Stopping production after a single unit</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>31. Smart business models aim to improve:</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Financial transactions only</li>
+        <li onclick="checkAnswer(this, 'B')">B) Business efficiency and cost-effectiveness</li>
+        <li onclick="checkAnswer(this, 'B')">C) Inventory storage</li>
+        <li onclick="checkAnswer(this, 'B')">D) Traditional practices</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>32. A smart grid in factories is used to:</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Decrease energy efficiency</li>
+        <li onclick="checkAnswer(this, 'B')">B) Balance energy loads and costs</li>
+        <li onclick="checkAnswer(this, 'B')">C) Increase waste</li>
+        <li onclick="checkAnswer(this, 'B')">D) Remove electricity</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>33. Which of the following characterizes Industry 4.0?</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Isolated processes</li>
+        <li onclick="checkAnswer(this, 'B')">B) Agile and connected systems</li>
+        <li onclick="checkAnswer(this, 'B')">C) Increased physical inspection</li>
+        <li onclick="checkAnswer(this, 'B')">D) Limited production flexibility</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+<div class="question">
+    <p>34. Advanced robotics in Industry 4.0 primarily helps with:</p>
+    <ol>
+        <li onclick="checkAnswer(this, 'B')">A) Increased manual handling</li>
+        <li onclick="checkAnswer(this, 'B')">B) Precision and automation</li>
+        <li onclick="checkAnswer(this, 'B')">C) Reducing manufacturing speed</li>
+        <li onclick="checkAnswer(this, 'B')">D) Unmonitored operations</li>
+    </ol>
+    <div class="feedback"></div>
+</div>
+
+
+<<script>
+    function checkAnswer(selectedOption, correctAnswer) {
+        // Get the feedback container
+        const feedback = selectedOption.closest('.question').querySelector('.feedback');
+        // Get all options in the current question
+        const options = selectedOption.closest('ol').children;
+        
+        // Disable all options after selection
+        for (let option of options) {
+            option.style.pointerEvents = 'none';
+        }
+
+        // Check if the selected option is correct
+        if (selectedOption.innerText[0] === correctAnswer) {
+            selectedOption.style.backgroundColor = '#4CAF50'; // Correct answer (green)
+            feedback.innerHTML = "<span class='answer'>Correct!</span>";
+        } else {
+            selectedOption.style.backgroundColor = '#F44336'; // Incorrect answer (red)
+            feedback.innerHTML = `<span class='incorrect'>Incorrect! The correct answer is ${correctAnswer}.</span>`;
+            
+            // Highlight correct answer
+            for (let option of options) {
+                if (option.innerText[0] === correctAnswer) {
+                    option.style.backgroundColor = '#4CAF50'; // Correct option (green)
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

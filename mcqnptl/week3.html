@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .question {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 1.1em;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            cursor: pointer;
+            margin: 8px 0;
+            padding: 10px;
+            background-color: #e6e6e6;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        li:hover {
+            background-color: #d0d0d0;
+        }
+        .answer {
+            font-weight: bold;
+            color: green;
+        }
+        .incorrect {
+            font-weight: bold;
+            color: red;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="question">
+        <p>1. What are Cyber-Physical Systems (CPS)?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Independent mechanical systems</li>
+            <li onclick="checkAnswer(this, 'B')">B) Integrated systems with physical and computational components</li>
+            <li onclick="checkAnswer(this, 'B')">C) Single device embedded systems</li>
+            <li onclick="checkAnswer(this, 'B')">D) Standalone software applications</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>2. Which of these is a feature of Cyber-Physical Systems?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Single-threaded processing</li>
+            <li onclick="checkAnswer(this, 'B')">B) Reactive computation</li>
+            <li onclick="checkAnswer(this, 'B')">C) Solely manual interaction</li>
+            <li onclick="checkAnswer(this, 'B')">D) Visual-based analysis only</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>3. Which industry uses Cyber-Physical Systems for traffic monitoring?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Healthcare</li>
+            <li onclick="checkAnswer(this, 'B')">B) Transportation</li>
+            <li onclick="checkAnswer(this, 'B')">C) Retail</li>
+            <li onclick="checkAnswer(this, 'B')">D) Education</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>4. What is the purpose of feedback control in CPS?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) To reduce resource allocation</li>
+            <li onclick="checkAnswer(this, 'C')">B) To process virtual-only data</li>
+            <li onclick="checkAnswer(this, 'C')">C) To influence physical systems based on sensor feedback</li>
+            <li onclick="checkAnswer(this, 'C')">D) To eliminate the need for sensors</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>5. Which technology is foundational for a “smart grid”?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Standalone controllers</li>
+            <li onclick="checkAnswer(this, 'B')">B) Real-time data collection and analysis</li>
+            <li onclick="checkAnswer(this, 'B')">C) Visual inspection methods</li>
+            <li onclick="checkAnswer(this, 'B')">D) Manual switches</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>6. The “5C Architecture” for Industry 4.0 CPS does NOT include:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) Connection</li>
+            <li onclick="checkAnswer(this, 'D')">B) Conversion</li>
+            <li onclick="checkAnswer(this, 'D')">C) Configuration</li>
+            <li onclick="checkAnswer(this, 'D')">D) Collaboration</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>7. What is a defining feature of Next-Generation Sensors?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Manual data recording</li>
+            <li onclick="checkAnswer(this, 'C')">B) No processing capabilities</li>
+            <li onclick="checkAnswer(this, 'C')">C) Self-calibration</li>
+            <li onclick="checkAnswer(this, 'C')">D) Limited communication range</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>8. Which application benefits from intelligent sensors?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Manual machinery operation</li>
+            <li onclick="checkAnswer(this, 'B')">B) Predictive maintenance in factories</li>
+            <li onclick="checkAnswer(this, 'B')">C) Handheld communication devices</li>
+            <li onclick="checkAnswer(this, 'B')">D) Standalone calculators</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>9. What is a common use of Augmented Reality (AR) in Industry 4.0?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Creating physical products</li>
+            <li onclick="checkAnswer(this, 'B')">B) Overlapping digital information on physical environments</li>
+            <li onclick="checkAnswer(this, 'B')">C) Replacing virtual screens with real ones</li>
+            <li onclick="checkAnswer(this, 'B')">D) Eliminating sensory data</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>10. Which industry has extensively used AR for safety training?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Transportation</li>
+            <li onclick="checkAnswer(this, 'B')">B) Manufacturing</li>
+            <li onclick="checkAnswer(this, 'B')">C) Retail</li>
+            <li onclick="checkAnswer(this, 'B')">D) Education</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>11. The first known usage of Augmented Reality was for:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Digital art creation</li>
+            <li onclick="checkAnswer(this, 'C')">B) Displaying live navigation</li>
+            <li onclick="checkAnswer(this, 'C')">C) Military training simulations</li>
+            <li onclick="checkAnswer(this, 'C')">D) Retail product display</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>12. Marker-based AR relies on:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) GPS signals</li>
+            <li onclick="checkAnswer(this, 'B')">B) Visual markers detected by a camera</li>
+            <li onclick="checkAnswer(this, 'B')">C) Only text-based data</li>
+            <li onclick="checkAnswer(this, 'B')">D) Random environmental patterns</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>13. What is an example of a Virtual Reality (VR) application in Industry 4.0?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Physical product assembly</li>
+            <li onclick="checkAnswer(this, 'B')">B) Full-sensory factory simulations</li>
+            <li onclick="checkAnswer(this, 'B')">C) Manual part inspection</li>
+            <li onclick="checkAnswer(this, 'B')">D) Physical-only training</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>14. Which is NOT a component of VR headsets?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) Gyroscope</li>
+            <li onclick="checkAnswer(this, 'D')">B) Lenses</li>
+            <li onclick="checkAnswer(this, 'D')">C) Display screen</li>
+            <li onclick="checkAnswer(this, 'D')">D) Projector</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>15. Semi-immersive VR experiences are achieved through:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) High-performance graphics and large projectors</li>
+            <li onclick="checkAnswer(this, 'A')">B) Small screens and minimal interaction</li>
+            <li onclick="checkAnswer(this, 'A')">C) VR headsets alone</li>
+            <li onclick="checkAnswer(this, 'A')">D) Only through marker-based tracking</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>16. Artificial Intelligence (AI) is a branch of:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Chemistry</li>
+            <li onclick="checkAnswer(this, 'B')">B) Computer Science</li>
+            <li onclick="checkAnswer(this, 'B')">C) Geology</li>
+            <li onclick="checkAnswer(this, 'B')">D) Electrical Engineering</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>17. Who proposed the term "Artificial Intelligence"?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Alan Turing</li>
+            <li onclick="checkAnswer(this, 'B')">B) John McCarthy</li>
+            <li onclick="checkAnswer(this, 'B')">C) Isaac Newton</li>
+            <li onclick="checkAnswer(this, 'B')">D) Elon Musk</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>18. Which of the following is NOT a type of AI application?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Image processing</li>
+            <li onclick="checkAnswer(this, 'B')">B) Physical labor</li>
+            <li onclick="checkAnswer(this, 'B')">C) Robotics</li>
+            <li onclick="checkAnswer(this, 'B')">D) Speech recognition</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>19. Which field heavily utilizes AI for predictive maintenance?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Education</li>
+            <li onclick="checkAnswer(this, 'B')">B) Manufacturing</li>
+            <li onclick="checkAnswer(this, 'B')">C) Tourism</li>
+            <li onclick="checkAnswer(this, 'B')">D) Social media</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>20. What is the main purpose of Machine Learning in AI?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) To replicate data without analysis</li>
+            <li onclick="checkAnswer(this, 'B')">B) To allow systems to learn from data without explicit programming</li>
+            <li onclick="checkAnswer(this, 'B')">C) To eliminate automation</li>
+            <li onclick="checkAnswer(this, 'B')">D) To follow only simple rules</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>21. Which technology is essential for Big Data storage in Industry 4.0?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) GFS and HDFS</li>
+            <li onclick="checkAnswer(this, 'A')">B) MS-DOS</li>
+            <li onclick="checkAnswer(this, 'A')">C) Local hard drives</li>
+            <li onclick="checkAnswer(this, 'A')">D) Compact discs</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>22. Big Data typically consists of:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Pre-structured data only</li>
+            <li onclick="checkAnswer(this, 'B')">B) Unstructured and structured data</li>
+            <li onclick="checkAnswer(this, 'B')">C) Only video files</li>
+            <li onclick="checkAnswer(this, 'B')">D) Only paper records</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>23. The “3 Vs” of Big Data are:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Volume, Velocity, and Variety</li>
+            <li onclick="checkAnswer(this, 'A')">B) Variation, Veracity, and Visuals</li>
+            <li onclick="checkAnswer(this, 'A')">C) Verification, Validity, and Variation</li>
+            <li onclick="checkAnswer(this, 'A')">D) Value, Variation, and Volume</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>24. Which characteristic of Big Data deals with the accuracy and reliability of data?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Variety</li>
+            <li onclick="checkAnswer(this, 'B')">B) Veracity</li>
+            <li onclick="checkAnswer(this, 'B')">C) Visualization</li>
+            <li onclick="checkAnswer(this, 'B')">D) Velocity</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>25. Data acquired from IoT sensors is categorized as:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) Artificial data</li>
+            <li onclick="checkAnswer(this, 'D')">B) Biomedical data</li>
+            <li onclick="checkAnswer(this, 'D')">C) Structured data</li>
+            <li onclick="checkAnswer(this, 'D')">D) IoT data</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>26. Big Data can be processed using:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Local-only processing methods</li>
+            <li onclick="checkAnswer(this, 'B')">B) Cloud-based distributed computing frameworks like Hadoop</li>
+            <li onclick="checkAnswer(this, 'B')">C) Paper-based sorting</li>
+            <li onclick="checkAnswer(this, 'B')">D) Centralized data warehouses only</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>27. Which data type is most commonly used in Big Data for unstructured insights?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Spreadsheets</li>
+            <li onclick="checkAnswer(this, 'B')">B) Document and image data</li>
+            <li onclick="checkAnswer(this, 'B')">C) Real-time stocks</li>
+            <li onclick="checkAnswer(this, 'B')">D) Text-based code only</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>28. Predictive analytics in Big Data aims to:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Describe past events</li>
+            <li onclick="checkAnswer(this, 'B')">B) Forecast future trends</li>
+            <li onclick="checkAnswer(this, 'B')">C) Organize database storage</li>
+            <li onclick="checkAnswer(this, 'B')">D) Remove irrelevant data</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>29. What is an example of data visualization in Big Data?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Data storage units</li>
+            <li onclick="checkAnswer(this, 'B')">B) Statistical charts and graphs</li>
+            <li onclick="checkAnswer(this, 'B')">C) Hard copy reports</li>
+            <li onclick="checkAnswer(this, 'B')">D) Email summaries</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>30. Which of the following is NOT a type of analytics in Big Data?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'D')">A) Descriptive analytics</li>
+            <li onclick="checkAnswer(this, 'D')">B) Predictive analytics</li>
+            <li onclick="checkAnswer(this, 'D')">C) Prescriptive analytics</li>
+            <li onclick="checkAnswer(this, 'D')">D) Reflexive analytics</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>31. Descriptive analytics answers which question?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) What should happen next?</li>
+            <li onclick="checkAnswer(this, 'B')">B) What happened?</li>
+            <li onclick="checkAnswer(this, 'B')">C) Why did it happen?</li>
+            <li onclick="checkAnswer(this, 'B')">D) Who caused the event?</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>32. Which tool is used to collect data from sensors in IoT?</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'C')">A) Notebooks</li>
+            <li onclick="checkAnswer(this, 'C')">B) Mobile devices only</li>
+            <li onclick="checkAnswer(this, 'C')">C) Logging systems</li>
+            <li onclick="checkAnswer(this, 'C')">D) Paper surveys</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>33. Data integration in Big Data involves:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'B')">A) Storing data separately</li>
+            <li onclick="checkAnswer(this, 'B')">B) Combining data from various sources</li>
+            <li onclick="checkAnswer(this, 'B')">C) Increasing redundancy</li>
+            <li onclick="checkAnswer(this, 'B')">D) Avoiding mixed data formats</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    <div class="question">
+        <p>34. In Big Data, “Clearing” refers to:</p>
+        <ol>
+            <li onclick="checkAnswer(this, 'A')">A) Correcting or removing uncooperative data</li>
+            <li onclick="checkAnswer(this, 'A')">B) Adding extra data sources</li>
+        </ol>
+        <div class="feedback"></div>
+    </div>
+    
+    
+
+<<script>
+    function checkAnswer(selectedOption, correctAnswer) {
+        // Get the feedback container
+        const feedback = selectedOption.closest('.question').querySelector('.feedback');
+        // Get all options in the current question
+        const options = selectedOption.closest('ol').children;
+        
+        // Disable all options after selection
+        for (let option of options) {
+            option.style.pointerEvents = 'none';
+        }
+
+        // Check if the selected option is correct
+        if (selectedOption.innerText[0] === correctAnswer) {
+            selectedOption.style.backgroundColor = '#4CAF50'; // Correct answer (green)
+            feedback.innerHTML = "<span class='answer'>Correct!</span>";
+        } else {
+            selectedOption.style.backgroundColor = '#F44336'; // Incorrect answer (red)
+            feedback.innerHTML = `<span class='incorrect'>Incorrect! The correct answer is ${correctAnswer}.</span>`;
+            
+            // Highlight correct answer
+            for (let option of options) {
+                if (option.innerText[0] === correctAnswer) {
+                    option.style.backgroundColor = '#4CAF50'; // Correct option (green)
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
